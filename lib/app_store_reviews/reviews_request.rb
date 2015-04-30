@@ -2,6 +2,7 @@ module AppStoreReviews
   class ReviewsRequest
     include HTTParty
     base_uri 'https://itunes.apple.com'
+    default_options.update(verify: false)
 
     def initialize(store, app, limit)
       @store = store
